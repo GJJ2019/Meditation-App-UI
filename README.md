@@ -1,6 +1,24 @@
-# meditation_design
+# Meditation App Design
 
-A new Flutter project.
+A new Flutter project for meditation app ui.
+
+## Images
+
+<img src="screenshots/home_screen.png" height="400" /> <img src="screenshots/night_home.png" height="400" />
+
+### Created & Maintained By
+
+[Gaurav Jajoo](https://github.com/gjj2019) ([@gjj1998](https://www.instagram.com/gjj1998))
+
+### Star :star: the repo If helpful
+
+# License
+
+    No Licenses 😀.
+
+### Packages used :
+
+[flutter_icons](https://pub.dev/packages/flutter_icons)
 
 ## Getting Started
 
