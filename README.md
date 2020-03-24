@@ -4,7 +4,7 @@ A new Flutter project for meditation app ui.
 
 ## Images
 
-<img src="screenshots/home_screen.png" height="400" /> <img src="screenshots/night_home.png" height="400" />
+<img src="screenshots/home_screen.png" height="600" /> <img src="screenshots/night_home.png" height="600" />
 
 ### Created & Maintained By
 
