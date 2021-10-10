@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:meditation_design/app/core/constants.dart';
 
-import 'constants.dart';
-
-class Profile extends StatefulWidget {
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
   @override
-  _ProfileState createState() => _ProfileState();
+  _ProfilePageState createState() => _ProfilePageState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 30.0),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(Constants.night),
           fit: BoxFit.cover,

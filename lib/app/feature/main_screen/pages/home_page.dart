@@ -1,44 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:meditation_design/constants.dart';
+import 'package:meditation_design/app/core/constants.dart';
 
-class Home extends StatefulWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
   @override
-  _HomeState createState() => _HomeState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 30.0),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage(Constants.morning), fit: BoxFit.cover),
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage(Constants.morning), fit: BoxFit.cover),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50),
           Text(
             'Welcome, GJJ2019',
-            style: Constants.boldLarge
-                .copyWith(color: Constants.white, fontSize: 24),
+            style: Constants.boldLarge.copyWith(color: Constants.white, fontSize: 24),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Text(
             '28 June, 2019',
             style: Constants.normalMedium.copyWith(color: Constants.white),
           ),
-          SizedBox(height: 30.0),
+          const SizedBox(height: 30.0),
           _activityCard(),
-          Spacer(),
+          const Spacer(),
           Text(
             'What Do You Need Today ?',
             style: Constants.boldMedium.copyWith(color: Constants.white),
           ),
-          SizedBox(height: 10.0),
-          Container(
+          const SizedBox(height: 10.0),
+          SizedBox(
             height: 120,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -46,7 +45,7 @@ class _HomeState extends State<Home> {
               itemCount: 4,
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
         ],
       ),
     );
@@ -57,22 +56,21 @@ class _HomeState extends State<Home> {
       height: 100.0,
       margin: const EdgeInsets.only(right: 30.0),
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      decoration: BoxDecoration(
-          color: Constants.white, borderRadius: BorderRadius.circular(15.0)),
+      decoration: BoxDecoration(color: Constants.white, borderRadius: BorderRadius.circular(15.0)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
             children: <Widget>[
-              Icon(
+              const Icon(
                 AntDesign.notification,
-                color: Theme.of(context).accentColor,
+                color: Constants.accentColor,
               ),
               Text(
                 ' Activity today',
                 style: Constants.boldSmall.copyWith(
-                  color: Theme.of(context).accentColor,
+                  color: Constants.accentColor,
                 ),
               ),
               Expanded(
@@ -105,12 +103,12 @@ class _HomeState extends State<Home> {
       ),
       child: Row(
         children: <Widget>[
-          Icon(
+          const Icon(
             AntDesign.dashboard,
             color: Constants.white,
             size: 50.0,
           ),
-          SizedBox(width: 20.0),
+          const SizedBox(width: 20.0),
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -119,7 +117,7 @@ class _HomeState extends State<Home> {
                 'Meditation Zen',
                 style: Constants.normalMedium.copyWith(color: Constants.white),
               ),
-              SizedBox(height: 2.0),
+              const SizedBox(height: 2.0),
               Text(
                 '8:00 p.m.',
                 style: Constants.normalSmall.copyWith(color: Constants.grey),

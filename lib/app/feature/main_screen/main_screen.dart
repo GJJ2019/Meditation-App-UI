@@ -1,21 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:meditation_design/constants.dart';
-import 'package:meditation_design/night.dart';
-import 'package:meditation_design/profile.dart';
 
-import 'home.dart';
+import '../../core/constants.dart';
+import 'pages/home_page.dart';
+import 'pages/night_page.dart';
+import 'pages/profile_page.dart';
 
-class MainPage extends StatefulWidget {
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
   @override
-  _MainPageState createState() => _MainPageState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [Home(), Night(), Profile()];
+  final List<Widget> _pages = [const HomePage(), const NightPage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +24,23 @@ class _MainPageState extends State<MainPage> {
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Constants.navBarColor,
-          unselectedIconTheme: IconThemeData(color: Constants.white),
+          selectedItemColor: Constants.accentColor,
+          unselectedIconTheme: const IconThemeData(color: Constants.white),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(AntDesign.home),
+              icon: const Icon(AntDesign.home),
               title: _showDotIndicator(_selectedIndex == 0),
             ),
             BottomNavigationBarItem(
-              icon: Icon(AntDesign.windowso),
+              icon: const Icon(AntDesign.windowso),
               title: _showDotIndicator(_selectedIndex == 1),
             ),
             BottomNavigationBarItem(
-              icon: Icon(AntDesign.user),
+              icon: const Icon(AntDesign.user),
               title: _showDotIndicator(_selectedIndex == 2),
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Theme.of(context).accentColor,
           onTap: (i) {
             setState(() {
               _selectedIndex = i;
@@ -53,10 +54,14 @@ class _MainPageState extends State<MainPage> {
 
   Widget _showDotIndicator(bool show) {
     return show
-        ? Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: Icon(Icons.brightness_1, size: 7, color: Colors.amber[800]),
+        ? const Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: Icon(
+              Icons.brightness_1,
+              size: 7,
+              color: Constants.accentColor,
+            ),
           )
-        : SizedBox();
+        : const SizedBox();
   }
 }

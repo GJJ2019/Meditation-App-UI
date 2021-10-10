@@ -1,20 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:meditation_design/app/core/constants.dart';
 
-import 'constants.dart';
+class NightPage extends StatefulWidget {
+  const NightPage({Key? key}) : super(key: key);
 
-class Night extends StatefulWidget {
   @override
-  _NightState createState() => _NightState();
+  _NightPageState createState() => _NightPageState();
 }
 
-class _NightState extends State<Night> {
+class _NightPageState extends State<NightPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 30.0),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(Constants.night),
           fit: BoxFit.cover,
@@ -23,23 +24,22 @@ class _NightState extends State<Night> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(height: 50.0),
+          const SizedBox(height: 50.0),
           Text(
             'Good night',
-            style: Constants.boldLarge
-                .copyWith(color: Constants.white, fontSize: 24),
+            style: Constants.boldLarge.copyWith(color: Constants.white, fontSize: 24),
           ),
-          SizedBox(height: 10.0),
+          const SizedBox(height: 10.0),
           Text(
             '28 June, 2019',
             style: Constants.normalMedium.copyWith(color: Constants.white),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           Align(
             alignment: Alignment.topLeft,
             child: CupertinoSwitch(value: true, onChanged: (_) {}),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -51,29 +51,27 @@ class _NightState extends State<Night> {
                 height: 40,
                 width: 40,
                 margin: const EdgeInsets.only(right: 30.0),
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(7.0)),
-                child: Icon(AntDesign.adduser, color: Constants.white),
+                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(7.0)),
+                child: const Icon(AntDesign.adduser, color: Constants.white),
               )
             ],
           ),
-          SizedBox(height: 10),
-          _createTimilineCard(),
-          SizedBox(height: 20),
+          const SizedBox(height: 10),
+          _createTimelineCard(),
+          const SizedBox(height: 20),
         ],
       ),
     );
   }
 
-  ListTile _createTimilineCard() {
+  ListTile _createTimelineCard() {
     return ListTile(
       leading: Container(
         height: 40,
         width: 40,
         margin: const EdgeInsets.only(right: 30.0),
-        decoration: BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
-        child: Icon(AntDesign.clockcircleo, color: Constants.white),
+        decoration: const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+        child: const Icon(AntDesign.clockcircleo, color: Constants.white),
       ),
       title: Text(
         'Meditation Zen',
