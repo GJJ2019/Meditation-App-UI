@@ -7,10 +7,10 @@ class NightPage extends StatefulWidget {
   const NightPage({Key? key}) : super(key: key);
 
   @override
-  _NightPageState createState() => _NightPageState();
+  NightPageState createState() => NightPageState();
 }
 
-class _NightPageState extends State<NightPage> {
+class NightPageState extends State<NightPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +51,8 @@ class _NightPageState extends State<NightPage> {
                 height: 40,
                 width: 40,
                 margin: const EdgeInsets.only(right: 30.0),
-                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(7.0)),
+                decoration:
+                    BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(7.0)),
                 child: const Icon(AntDesign.adduser, color: Constants.white),
               )
             ],

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -10,10 +9,10 @@ import 'pages/profile_page.dart';
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
   @override
-  _MainScreenState createState() => _MainScreenState();
+  MainScreenState createState() => MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [const HomePage(), const NightPage(), const ProfilePage()];
@@ -26,18 +25,18 @@ class _MainScreenState extends State<MainScreen> {
           backgroundColor: Constants.navBarColor,
           selectedItemColor: Constants.accentColor,
           unselectedIconTheme: const IconThemeData(color: Constants.white),
-          items: <BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: const Icon(AntDesign.home),
-              title: _showDotIndicator(_selectedIndex == 0),
+              icon: Icon(AntDesign.home),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(AntDesign.windowso),
-              title: _showDotIndicator(_selectedIndex == 1),
+              icon: Icon(AntDesign.windowso),
+              label: 'Window',
             ),
             BottomNavigationBarItem(
-              icon: const Icon(AntDesign.user),
-              title: _showDotIndicator(_selectedIndex == 2),
+              icon: Icon(AntDesign.user),
+              label: 'Profile',
             ),
           ],
           currentIndex: _selectedIndex,
@@ -52,16 +51,16 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget _showDotIndicator(bool show) {
-    return show
-        ? const Padding(
-            padding: EdgeInsets.only(top: 4),
-            child: Icon(
-              Icons.brightness_1,
-              size: 7,
-              color: Constants.accentColor,
-            ),
-          )
-        : const SizedBox();
-  }
+  // Widget _showDotIndicator(bool show) {
+  //   return show
+  //       ? const Padding(
+  //           padding: EdgeInsets.only(top: 4),
+  //           child: Icon(
+  //             Icons.brightness_1,
+  //             size: 7,
+  //             color: Constants.accentColor,
+  //           ),
+  //         )
+  //       : const SizedBox();
+  // }
 }
